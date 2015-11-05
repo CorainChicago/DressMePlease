@@ -1,0 +1,1 @@
+test1 = Quirk.create(quote: "I love rain in the springtime.", weekday: "Monday")
