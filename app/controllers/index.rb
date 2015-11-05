@@ -23,3 +23,18 @@ end
 get '/login' do
   erb :'users/show'
 end
+
+post '/login' do
+  if @user = User.authenticate(params[:email], params[:password])
+    session[:user_id] = @user.id
+    redirect '/users'
+  else
+    @error = "Sorry, the credentials provided do not match."
+    erb :'users/show'
+  end
+end
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/login'
+end
