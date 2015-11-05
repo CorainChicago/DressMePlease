@@ -6,15 +6,8 @@ class Forecast
   ForecastIO.api_key = API_KEY
 
   def self.get_forecast(coordinates = {latitude: 41.889717, longitude: -87.637611})
-    forecast = ForecastIO.forecast(coordinates[:latitude], coordinates[:longitude])
-
-    puts forecast
-
+    return ForecastIO.forecast(coordinates[:latitude], coordinates[:longitude]).hourly.data[7]
   end
-
-
-
 
 end
 
-Forecast.get_forecast.hourly.data[7]
