@@ -39,5 +39,3 @@ Quirk.create([
 
 
 
-
->>>>>>> 6733cd652b24e6e4dd35c5807b6861aa8abf409e

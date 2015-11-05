@@ -7,26 +7,18 @@ end
 get '/index' do
   @time = Time.now.utc
   @quirk = Quirk.last
-  send_to_yoda = @quirk.split("+")
-  # These code snippets use an open-source library.
-  # These code snippets use an open-source library. http://unirest.io/ruby
-response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=send_to_yoda",
-  headers:{
-    "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
-    "Accept" => "text/plain"
-  }
-  p response
+  text = @quirk.quote 
+  # This is the code to pull from the Yoda API, after the '?sentence=' is the phrase the app will convert
+  #The sentence needs to be in the format of 'word+word+word', a word with '+' before the next word
+  # I commented it out to keep us from over pulling on the API.
+  # response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=Dogs+run+to+chase+a+ball",
+  # headers:{
+  #   "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
+  #   "Accept" => "text/plain"
+  # }
+
 
   erb :index
 end
 
-# These code snippets use an open-source library.
-# response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=You+will+learn+how+to+speak+like+me+someday.++Oh+wait.",
-#   headers:{
-#     "X-Mashape-Key" => "PFFTV8Efk5mshwyQirYrBIuyyAXvp15WSNYjsnaUl5ywppZGwV",
-#     "Accept" => "text/plain"
-#   }
-
-
-
-# These code snippets use an open-source library.
+#
