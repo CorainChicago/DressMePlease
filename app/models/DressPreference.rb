@@ -1,4 +1,4 @@
-class DressLogic < ActiveRecord::Base
+class DressPreference < ActiveRecord::Base
   
 
 end
