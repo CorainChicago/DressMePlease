@@ -3,12 +3,12 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
-  has_many :dress_preference
+  has_one :dresspreference
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates_format_of :email, with: => /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :password_hash, presence: true
 
   def password
