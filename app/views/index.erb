@@ -1,5 +1,6 @@
 
-  <p><%= @time %></p>
+  <p><%= @date%></p>
+  <p><%= @time.to_formatted_s(:long)  %></p>
   <p class="yoda"><%= @quirk.quote %></p>
     <h3 class="panel-heading">"Casey, What should I wear today?"</h3>
   <div>
