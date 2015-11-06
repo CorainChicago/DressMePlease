@@ -1,0 +1,31 @@
+body {
+  background-color: #D4B873;
+  border-color: #dcdcdc;
+}
+
+.well {
+  background-color: #356EAC;
+  border-color: #dcdcdc;
+  color: white;
+  margin-top: 20px;
+}
+
+.panel {
+  background-color: #356EAC;
+  border-color: #dcdcdc;
+  color: white;
+  padding-left: 20px;
+}
+
+.container-fluid
+{
+  background-color: #356EAC;
+  border-color: #dcdcdc;
+  color: white;
+}
+
+.navbar
+{
+  border-color: #dcdcdc;
+  color: white;
+}

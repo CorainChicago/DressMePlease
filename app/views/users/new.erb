@@ -8,15 +8,21 @@
   <% end %>
 
   <div class="form-group">
-    <form role="form">
+    <form role="form" action = "/users" method = "post">
 
       <label name="email">Email:</label>
       <input class="form-control" type="text" name="user[email]" placeholder="you@example.com"><br>
 
+      <label name="first_name">First Name:</label>
+      <input class="form-control" type="text" name="user[first_name]" placeholder="Casey"><br>
+
+      <label name="last_name">Last Name:</label>
+      <input class="form-control" type="text" name="user[last_name]" placeholder="Cumbow"><br>
+
       <label name="password">Password:</label>
       <input class="form-control" type="password" name="user[password]" placeholder="*******"><br>
 
-      <input class="btn btn-success" type="submit" value="Get dressed!">
+      <input class="btn" type="submit" value="Get dressed!">
 
     </form>
   </div>

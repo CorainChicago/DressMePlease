@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -12,12 +12,12 @@
   -->
 
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
   <script src="/bootstrap/js/bootstrap.min.js"></script>
+
   <script src="/js/application.js"></script>
 
   <title></title>
@@ -27,7 +27,16 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
+          <% if logged_in? %>
+          <p>Every day is a great day in Chicago.</p>
+          <p><a class="navbar-brand"href="/users/logout">Logout</a></p>
+          <% else %> 
+          <p><a id='login' class="navbar-brand" id='login' href="/users/login">Login</a></p>
           <p><a class="navbar-brand"href="/users/new">Register</a></p>
+
+          <%end %>
+          <p><a class="navbar-brand"href="/about">About</a></p>
+
         </div>
         </div>
       </nav>

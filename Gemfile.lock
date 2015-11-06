@@ -114,6 +114,3 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   unirest
-
-BUNDLED WITH
-   1.10.6
