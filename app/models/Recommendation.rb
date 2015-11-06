@@ -1,8 +1,9 @@
 class Recommendation
-  attr_reader :dress_preferences, :weather
+  attr_reader :weather
+  attr_accessor :dress_preferences
 
     def initialize()
-      @dress_preferences = Preference.first
+      @dress_preferences = User.find_by(first_name: 'Charlie').preference
       @weather = Forecast.get_forecast()
       p @weather
     end
