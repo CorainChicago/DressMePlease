@@ -1,9 +1,12 @@
 
-  <p><%= @time %></p>
+  <div class="jumbotron">
+    <p><%= format_date(Time.now) %></p>
+    <p><%= format_time(Time.now) %></p>
+  </div> 
   <p class="yoda"><%= @quirk.quote %></p>
     <h3 class="panel-heading">"Casey, What should I wear today?"</h3>
   <div>
-    <p class="panel">Here's today's weather:</p><%=@forecast.summary%> <img src=<%=@forecast.icon%>>
+    <p class="panel">Here's today's weather:</p>
     <div class="well">
       <p>Here's what to wear today:</p>
       <%@array.each do |c| %>
