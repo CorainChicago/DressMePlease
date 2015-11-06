@@ -3,33 +3,45 @@ class Recommendation
 
     def initialize()
       @dress_preferences = Preference.first
-      @weather = Forecast.get_forcast({latitude: xxx, longitude: yyy})
+      @weather = Forecast.get_forecast()
+      p @weather
     end
 
     def compile_recommendations
       items = []
       items << need_coat?
       items << need_jacket?
+      items << need_hat?
+
+      # items << ponytail_it?
+      items << need_umbrella?
+      items << need_galoshes?
+
+      items << need_sunglasses?
+      items << short_sleeves_okay?
+
+
+
       return items
     end
 
     private
 
     def need_coat?
-      return "coat" if weather[:temperature] =< dress_preferences[:temp_coat]
+      return "coat" if weather[:temperature] <= dress_preferences[:temp_coat]
     end
 
     def need_jacket?
-      true if weather[:temperature] =< dress_preferences[:temp_jacket]
+      return "jacket" if weather[:temperature] <= dress_preferences[:temp_jacket]
     end
 
     def need_hat?
-      true if weather[:temperature] =< dress_preferences[:temp_hat]
+      true if weather[:temperature] <= dress_preferences[:temp_hat]
     end
 
-    def ponytail_it?
-      true if weather[:windspeed] >= dress_preferences[:wind_speed_ponytail] || weather[:humidity] >= dress_preferences[:humidity_hair]
-    end
+    # def ponytail_it?
+    #   true if weather[:windspeed] >= dress_preferences[:wind_speed_ponytail] || weather[:humidity] >= dress_preferences[:humidity_hair]
+    # end
 
     def need_umbrella?
       true if weather[:precipProbability] >= dress_preferences[:precipitation_probability_umbrella]
@@ -40,7 +52,7 @@ class Recommendation
     end
 
     def need_sunglasses?
-      true if weather[:cloudCover] =< dress_preferences[:cloud_coverage_sunglasses]
+      true if weather[:cloudCover] <= dress_preferences[:cloud_coverage_sunglasses]
     end
 
    def short_sleeves_okay?
