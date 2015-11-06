@@ -38,7 +38,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.create(params[:user])
+  @user = User.new(params[:user])
+  @user = User.save(params[:user])
   @user.valid?
   puts @user.errors.inspect
   if @user.valid?
