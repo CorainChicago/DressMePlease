@@ -42,7 +42,7 @@ post '/users' do
 
   if @user.valid?
     session[:user_id] = @user.id
-    redirect "/users"
+    redirect "/index"
   else @registration_error = true
     erb :'users/new'
   end
