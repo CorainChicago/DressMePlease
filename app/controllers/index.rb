@@ -11,6 +11,8 @@ get '/index' do
   @whattowear = Recommendation.new
   @array = @whattowear.compile_recommendations
 
+  @icon = Forecast.get_forecast.icon
+
   # This is the code to pull from the Yoda API, after the '?sentence=' is the phrase the app will convert
   #The sentence needs to be in the format of 'word+word+word', a word with '+' before the next word
   # I commented it out to keep us from over pulling on the API.

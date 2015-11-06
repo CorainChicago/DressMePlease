@@ -15,7 +15,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'unirest'
-gem 'forcast_io'
+gem 'forecast_io'
 
 group :test do
   gem 'shoulda-matchers'
