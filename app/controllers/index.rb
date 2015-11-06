@@ -8,6 +8,11 @@ get '/index' do
   @time = Time.now.utc
   @quirk = Quirk.last
   text = @quirk.quote
+  num = text.length
+  a = text.gsub(" ", "+")
+  p "$$$$$$"
+  p a
+  text.insert(0, '+') 
   @whattowear = Recommendation.new
   @array = @whattowear.compile_recommendations
 
@@ -16,11 +21,14 @@ get '/index' do
   # This is the code to pull from the Yoda API, after the '?sentence=' is the phrase the app will convert
   #The sentence needs to be in the format of 'word+word+word', a word with '+' before the next word
   # I commented it out to keep us from over pulling on the API.
-  # response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=Dogs+run+to+chase+a+ball",
-  # headers:{
-  #   "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
-  #   "Accept" => "text/plain"
-  # }
+  response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=If+the+temperature+is+less+than+my+age+I+dont+get+out+of+bed",
+  headers:{
+    "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
+    "Accept" => "text/plain"
+  }
+  p response
+  display = response
+  p display 
 
   erb :index
 end
