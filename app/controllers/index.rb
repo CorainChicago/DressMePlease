@@ -12,7 +12,7 @@ get '/index' do
   a = text.gsub(" ", "+")
   p "$$$$$$"
   p a
-  text.insert(0, '+') 
+  text.insert(0, '+')
   @whattowear = Recommendation.new
   @array = @whattowear.compile_recommendations
 
@@ -28,7 +28,7 @@ get '/index' do
   }
   p response
   display = response
-  p display 
+  p display
 
   erb :index
 end
@@ -39,6 +39,8 @@ end
 
 post '/users' do
   @user = User.create(params[:user])
+  @user.valid?
+  puts @user.errors.inspect
   if @user.valid?
     session[:user_id] = @user.id
     redirect "/users"
