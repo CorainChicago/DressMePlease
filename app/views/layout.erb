@@ -28,10 +28,11 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <% if logged_in? %>
-          <p>Every day is a great day in Chicago.</p>
+          <p><a class="navbar-brand"href="/">Home</a></p>
           <p><a class="navbar-brand"href="/users/logout">Logout</a></p>
-          <p><a class="navbar-brand"href= "/users/<%= current_user.id %>">Click here to see your individual profile page </a></p>
+          <p><a class="navbar-brand"href= "/users/<%= current_user.id %>">Profile Page </a></p>
           <% else %>
+          <p><a class="navbar-brand"href="/">Home</a></p>
           <p><a id='login' class="navbar-brand" id='login' href="/users/login">Login</a></p>
           <p><a class="navbar-brand"href="/users/new">Register</a></p>
 
