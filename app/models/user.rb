@@ -3,7 +3,15 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
-  has_one :dresspreference
+  has_one :preference
+
+  def initialize(parameters)
+    @first_name = parameters[:first_name]
+    @last_name = parameters[:last_name]
+    @email = parameters[:email]
+    @password = parameters[:password]
+    puts @password
+  end
 
   validates :first_name, presence: true
   validates :last_name, presence: true
