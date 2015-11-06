@@ -1,17 +1,19 @@
-<div class="container">
+
   <p><%= @time %></p>
   <p class="yoda"><%= @quirk.quote %></p>
-<h3 class="panel-heading">"Casey, What should I wear today?"</h3>
+    <h3 class="panel-heading">"Casey, What should I wear today?"</h3>
   <div>
     <p class="panel">Here's today's weather:</p>
-    <p class="well">Here's what to wear today:</p>
-
-    <%@array.each do |c| %>
-    <p><%=c %></p>
-    <% end %>
-    <img src='..<%= @icon %>'>
-   
-
+    <div class="well">
+      <p>Here's what to wear today:</p>
+      <%@array.each do |c| %>
+        <p><%=c %></p>
+      <% end %>
+    </div>
+    <img src='../<%= @icon %>'>
 <img class="img-circle" class=".img-responsive"  src="http://1funny.com/wp-content/uploads/2011/02/cats-umbrella.jpg">
-</div>
-<button class="btn-primary">Test Button</button>
+
+
+<form method="get" action="yoda">
+  <input
+  <button class="btn-primary">Test Button</button>
