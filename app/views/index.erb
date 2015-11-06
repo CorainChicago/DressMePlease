@@ -3,14 +3,14 @@
   <p class="yoda"><%= @quirk.quote %></p>
 <h3 class="panel-heading">"Casey, What should I wear today?"</h3>
   <div>
-    <p class="panel">Here's today's weather:</p>
+    <p class="panel">Here's today's weather:</p><%=@weather.summary%> <img src=<%=@weather.icon%>>
     <p class="well">Here's what to wear today:</p>
 
-    <%@array.each do |c| %>
-    <p><%=c %></p>
-    <% end %>
+ <%#@array.each do |c| %>
+    <p><%#=c %></p>
+    <% #end %>
     <img src='..<%= @icon %>'>
-   
+
 
 <img class="img-circle" class=".img-responsive"  src="http://1funny.com/wp-content/uploads/2011/02/cats-umbrella.jpg">
 </div>
