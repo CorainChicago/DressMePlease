@@ -1,0 +1,24 @@
+<div class="container">
+<h2 class="panel-heading">Create Your Account</h2>
+
+  <% if @registration_error %>
+
+    <div class="alert-warning"> Something went wrong! Please check that email and password have been entered correctly, and try again. </div>
+
+  <% end %>
+
+  <div class="form-group">
+    <form role="form">
+
+      <label name="email">Email:</label>
+      <input class="form-control" type="text" name="user[email]" placeholder="you@example.com"><br>
+
+      <label name="password">Password:</label>
+      <input class="form-control" type="password" name="user[password]" placeholder="*******"><br>
+
+      <input class="btn btn-success" type="submit" value="Get dressed!">
+
+    </form>
+  </div>
+
+</div>
