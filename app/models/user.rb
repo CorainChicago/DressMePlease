@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
-  has_one :dresspreference
+  has_one :preference
 
   validates :first_name, presence: true
   validates :last_name, presence: true
