@@ -27,7 +27,7 @@ get '/index' do
   #   "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
   #   "Accept" => "text/plain"
 
-  # } 
+  # }
 
   erb :index
 end
