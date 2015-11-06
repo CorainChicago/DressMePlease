@@ -38,16 +38,10 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.new(params[:user])
-  @user = User.save(params[:user])
-  @user.valid?
-  puts @user.errors.inspect
+  @user = User.create(params[:user])
   if @user.valid?
     session[:user_id] = @user.id
-    # BELOW COULD MESS UP STUFF
-    # rescue exception do
       redirect '/'
-    # end
   else @registration_error = true
     erb :'users/new'
   end
