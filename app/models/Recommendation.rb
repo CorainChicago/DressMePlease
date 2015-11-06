@@ -3,7 +3,7 @@ class Recommendation
   attr_accessor :dress_preferences
 
     def initialize()
-      @dress_preferences = User.find_by(first_name: 'Charlie').preference
+      @dress_preferences = User.find_by(email: 'cat@cat.com').preference
       @weather = Forecast.get_forecast()
       p @weather
     end
