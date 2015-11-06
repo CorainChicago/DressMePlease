@@ -57,7 +57,7 @@ class Recommendation
     end
 
    def short_sleeves_okay?
-     return "short sleeves" if weather[:humidity] >= dress_preferences[:humitdity_short_sleeves]
+     return "short sleeves" if weather[:humidity] >= dress_preferences[:humitdity_short_sleeves] && weather[:temperature] > 65
    end
 
 end
