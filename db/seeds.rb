@@ -15,7 +15,11 @@ Quirk.create([
       {quote: "'If the temperature is less than my age, I don't get out of bed' - Ellen ", weekday: "Sunday"},
   ])
 
+@charlie = User.create(first_name: "Charlie", last_name: "Bear", email: "cat@cat.com", password: "password")
 
+
+ Preference.create(temp_coat: 35, temp_jacket: "65", precipitation_probability_umbrella: 0.3, wind_speed_ponytail: 30, temp_hat: 45, precipitation_intensity_golashes: 0.1, cloud_coverage_sunglasses: 0.4, humidity_hair: 0.4, humitdity_short_sleeves: 0.6, user_id: @charlie.id
+)
 
 
 

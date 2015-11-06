@@ -17,8 +17,10 @@ get '/index' do
   #   "Accept" => "text/plain"
   # }
 
-
   erb :index
 end
+
+
+
 
 #
