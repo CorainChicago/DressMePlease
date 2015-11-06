@@ -15,7 +15,7 @@ get '/index' do
   @whattowear = Recommendation.new
   @array = @whattowear.compile_recommendations
 
-  @forecast = Forecast.get_forecast
+  @icon = Forecast.get_forecast.icon
 
   # This is the code to pull from the Yoda API, after the '?sentence=' is the phrase the app will convert
   #The sentence needs to be in the format of 'word+word+word', a word with '+' before the next word
@@ -25,6 +25,12 @@ get '/index' do
   #   "X-Mashape-Key" => "dHsIgBnEJxmshvu2LeuHmgAAOj4Ep1VklVxjsnBvDXEXyZIFF9",
   #   "Accept" => "text/plain"
   # }
+<<<<<<< HEAD
+=======
+  p response
+  display = response
+  p display
+>>>>>>> 532a0c345e1d5275303f50577c47ca1bb66f238a
 
   erb :index
 end
@@ -38,7 +44,7 @@ post '/users' do
 
   if @user.valid?
     session[:user_id] = @user.id
-    redirect "/users"
+    redirect "/index"
   else @registration_error = true
     erb :'users/new'
   end
@@ -59,6 +65,9 @@ post '/users/login' do
   end
 end
 
+get '/about' do
+  erb :about
+end
 get '/users/logout' do
   session[:user_id] = nil
   redirect '/index'
