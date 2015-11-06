@@ -12,7 +12,7 @@ get '/index' do
   a = text.gsub(" ", "+")
   p "$$$$$$"
   p a
-  text.insert(0, '+') 
+  text.insert(0, '+')
   @whattowear = Recommendation.new
   @array = @whattowear.compile_recommendations
 
@@ -28,7 +28,7 @@ get '/index' do
   }
   p response
   display = response
-  p display 
+  p display
 
   erb :index
 end
@@ -49,6 +49,10 @@ end
 
 get '/login' do
   erb :'users/show'
+end
+
+get '/about' do
+  erb :about
 end
 
 post '/login' do
