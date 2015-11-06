@@ -43,7 +43,10 @@ post '/users' do
   puts @user.errors.inspect
   if @user.valid?
     session[:user_id] = @user.id
-    redirect "/users"
+    # BELOW COULD MESS UP STUFF
+    # rescue exception do
+      redirect '/'
+    # end
   else @registration_error = true
     erb :'users/new'
   end
