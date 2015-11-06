@@ -40,10 +40,10 @@ end
 
 post '/users' do
   @user = User.create(params[:user])
-
   if @user.valid?
     session[:user_id] = @user.id
     redirect "/index"
+>>>>>>> 532a0c345e1d5275303f50577c47ca1bb66f238a
   else @registration_error = true
     erb :'users/new'
   end
