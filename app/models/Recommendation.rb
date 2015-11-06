@@ -16,15 +16,15 @@ class Recommendation
     private
 
     def need_coat?
-      return "coat" if weather[:temperature] =< dress_preferences[:temp_coat]
+      return "coat" if weather[:temperature] <= dress_preferences[:temp_coat]
     end
 
     def need_jacket?
-      true if weather[:temperature] =< dress_preferences[:temp_jacket]
+      true if weather[:temperature] <= dress_preferences[:temp_jacket]
     end
 
     def need_hat?
-      true if weather[:temperature] =< dress_preferences[:temp_hat]
+      true if weather[:temperature] <= dress_preferences[:temp_hat]
     end
 
     def ponytail_it?
@@ -40,7 +40,7 @@ class Recommendation
     end
 
     def need_sunglasses?
-      true if weather[:cloudCover] =< dress_preferences[:cloud_coverage_sunglasses]
+      true if weather[:cloudCover] <= dress_preferences[:cloud_coverage_sunglasses]
     end
 
    def short_sleeves_okay?
