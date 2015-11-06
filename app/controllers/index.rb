@@ -39,6 +39,7 @@ end
 
 post '/users' do
   @user = User.create(params[:user])
+
   if @user.valid?
     session[:user_id] = @user.id
     redirect "/users"
