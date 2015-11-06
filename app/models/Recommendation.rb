@@ -44,19 +44,19 @@ class Recommendation
     # end
 
     def need_umbrella?
-      true if weather[:precipProbability] >= dress_preferences[:precipitation_probability_umbrella]
+      return "umbrella" if weather[:precipProbability] >= dress_preferences[:precipitation_probability_umbrella]
     end
 
     def need_galoshes?
-      true if weather[:precipIntensity] >= dress_preferences[:precipitation_intensity_golashes]
+      return "galoshes" if weather[:precipIntensity] >= dress_preferences[:precipitation_intensity_golashes]
     end
 
     def need_sunglasses?
-      true if weather[:cloudCover] <= dress_preferences[:cloud_coverage_sunglasses]
+      return "sunglasses" if weather[:cloudCover] <= dress_preferences[:cloud_coverage_sunglasses]
     end
 
    def short_sleeves_okay?
-     true if weather[:humidity] >= dress_preferences[:humitdity_short_sleeves]
+     return "short sleeves" if weather[:humidity] >= dress_preferences[:humitdity_short_sleeves]
    end
 
 end
