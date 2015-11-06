@@ -30,7 +30,8 @@
           <% if logged_in? %>
           <p>Every day is a great day in Chicago.</p>
           <p><a class="navbar-brand"href="/users/logout">Logout</a></p>
-          <% else %> 
+          <p><a class="navbar-brand"href= "/users/<%= current_user.id %>">Click here to see your individual profile page </a></p>
+          <% else %>
           <p><a id='login' class="navbar-brand" id='login' href="/users/login">Login</a></p>
           <p><a class="navbar-brand"href="/users/new">Register</a></p>
 
